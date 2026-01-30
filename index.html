@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Shivhare | Computer Science Engineer | Software & Web Developer</title>
+    <meta name="description" content="Ayush Shivhare is a final-year B.Tech Computer Science student at VIT Vellore with strong foundations in software engineering, web development, data analytics, and AI-driven applications.">
+    <meta name="keywords" content="Computer Science Engineer, Software Developer, Web Developer, AI Enthusiast, Data Analytics, VIT Vellore">
+    <meta name="author" content="Ayush Shivhare">
+    <meta property="og:title" content="Ayush Shivhare | Portfolio">
+    <meta property="og:description" content="Computer Science Engineer | Software & Web Developer | AI & Data Enthusiast">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ayush Shivhare | Portfolio">
+    <meta name="twitter:description" content="Computer Science Engineer | Software & Web Developer | AI & Data Enthusiast">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Certification hover animation */
+.cert-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.35);
+}
+
+.cert-card:hover .cert-icon {
+  transform: rotate(6deg) scale(1.1);
+}
+
+/* Certificate link underline animation */
+.cert-link {
+  position: relative;
+}
+
+.cert-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+  transition: width 0.3s ease;
+}
+
+.cert-link:hover::after {
+  width: 100%;
+}
+
+        /* Experience card hover animation */
+.experience-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.25);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+/* Icon hover animation */
+.experience-card:hover .experience-icon {
+  transform: scale(1.15) rotate(2deg);
+}
+
+/* Certificate link underline animation */
+.cert-link {
+  position: relative;
+}
+
+.cert-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+  transition: width 0.3s ease;
+}
+
+.cert-link:hover::after {
+  width: 100%;
+}
+
+        * {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #f0f0f0;
+        }
+        .code-font {
+            font-family: "JetBrains Mono", monospace;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            .glass-card { box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-border {
+            position: relative;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            padding: 1px;
+        }
+        .gradient-border-inner {
+            background: rgba(10, 10, 10, 0.9);
+            border-radius: 15px;
+            padding: 24px;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        .skill-level {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: width 1s ease-in-out;
+            width: 0;
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #6366f1;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #6366f1 }
+        }
+        /* smoother intro */
+.fade-in.visible { will-change: transform, opacity; }
+
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden">
+    <!-- Floating Social Icons -->
+    <div class="fixed right-6 bottom-6 z-50 flex flex-col gap-4">
+        <a href="https://www.linkedin.com/in/ayush-shivhare-427578275/" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+            <i class="fab fa-linkedin-in text-xl text-white group-hover:text-blue-400"></i>
+        </a>
+        <a href="https://github.com/ayush-shivhare" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+            <i class="fab fa-github text-xl text-white group-hover:text-purple-400"></i>
+        </a>
+        <a href="mailto:ayushshivhare649@gmail.com" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+            <i class="fas fa-envelope text-xl text-white group-hover:text-red-400"></i>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-40 glass-card backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">Ayush Shivhare</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="hover:text-purple-300 transition-colors duration-300">About</a>
+                <a href="#skills" class="hover:text-purple-300 transition-colors duration-300">Skills</a>
+                <a href="#projects" class="hover:text-purple-300 transition-colors duration-300">Projects</a>
+                <a href="#experience" class="hover:text-purple-300 transition-colors duration-300">Experience</a>
+                <a href="#contact" class="hover:text-purple-300 transition-colors duration-300">Contact</a>
+                <a href="assets/Ayush_S Shivhare_Resume.pdf" download class="px-6 py-2 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 pulse">
+  Resume
+</a>
+                    
+            </div>
+            <button class="md:hidden text-xl" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <div id="mobileMenu" class="md:hidden hidden px-6 py-4 glass-card border-t border-gray-800">
+            <div class="flex flex-col gap-4">
+                <a href="#about" class="py-2 hover:text-purple-300">About</a>
+                <a href="#skills" class="py-2 hover:text-purple-300">Skills</a>
+                <a href="#projects" class="py-2 hover:text-purple-300">Projects</a>
+                <a href="#experience" class="py-2 hover:text-purple-300">Experience</a>
+                <a href="#contact" class="py-2 hover:text-purple-300">Contact</a>
+                <a href="./Ayush_S Shivhare_Resume.pdf" download class="py-2 text-center rounded-full bg-gradient-to-r from-purple-600 to-indigo-600">
+                     Resume
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+
+  <!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center px-6 py-20">
+  <div class="container mx-auto max-w-6xl">
+    <div class="max-w-3xl fade-in">
+      
+
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+        <span class="gradient-text">Ayush Shivhare</span>
+      </h1>
+
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-200 mb-6">
+        I build <span id="rotatingText" class="gradient-text"></span>
+        <span class="inline-block w-[2px] h-7 bg-purple-400 align-middle ml-1 animate-pulse"></span>
+      </h2>
+
+      <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-10">
+        Final-year B.Tech CSE student at VIT Vellore. I focus on building clean, scalable applications
+        and solving real-world problems with modern web + AI tools.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#projects"
+           class="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 hover:scale-105">
+          View Projects
+        </a>
+
+        <a href="#contact"
+           class="px-8 py-3 rounded-full glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105">
+          Contact Me
+        </a>
+
+        <a href="mailto:ayushshivhare649@gmail.com"
+           class="px-8 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+          Email
+        </a>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold mb-12 text-center fade-in">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Professional Summary</h3>
+                        <p class="text-gray-300 mb-6">
+                            Driven Computer Science student with a strong interest in software engineering, web development, machine learning, and artificial intelligence. I enjoy building impactful, user-centric applications using modern technologies and have hands-on experience through real-world projects, virtual internships, and technical leadership roles. I am committed to continuous learning and applying my skills to solve real-world problems.
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Education</h4>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-graduation-cap text-purple-400"></i>
+                                        <span>VIT Vellore | B.Tech CSE | CGPA: 7.74/10 | 2022-Present</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-school text-purple-400"></i>
+                                        <span>Apex International School, Jaipur | Class XII (CBSE)</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-school text-purple-400"></i>
+                                        <span>St. Joseph School, Mahoba | Class X (CBSE)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Academic Coursework</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-full glass-card text-sm">Data Structures & Algorithms</span>
+                                    <span class="px-3 py-1 rounded-full glass-card text-sm">Operating Systems</span>
+                                    <span class="px-3 py-1 rounded-full glass-card text-sm">Computer Networks</span>
+                                    <span class="px-3 py-1 rounded-full glass-card text-sm">DBMS</span>
+                                    <span class="px-3 py-1 rounded-full glass-card text-sm">Artificial Intelligence</span>
+                                    <span class="px-3 py-1 rounded-full glass-card text-sm">OOP</span>
+                                    <span class="px-3 py-1 rounded-full glass-card text-sm">Web Development</span>
+                                    <span class="px-3 py-1 rounded-full glass-card text-sm">Data Science & Big Data Analytics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Extracurricular & Leadership</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-users text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Senior Core Member – Institution of Engineers (IE(I))</h4>
+                                    <p class="text-gray-300">Volunteered and managed multiple hackathons and technical events</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-calendar-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Volunteer – Riviera Cultural Fest, VIT</h4>
+                                    <p class="text-gray-300">Contributed to organizing cultural events and activities</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-rocket text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Volunteer – Gravitas Techno Fest, VIT</h4>
+                                    <p class="text-gray-300">Assisted in technical event management and coordination</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-gradient-to-b from-transparent to-black/20">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Technical Skills</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Programming Languages -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-code text-purple-400"></i>
+                            <span>Programming Languages</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Python</span>
+                                    <span class="text-purple-300">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>JavaScript</span>
+                                    <span class="text-purple-300">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>C/C++</span>
+                                    <span class="text-purple-300">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Java (Basic)</span>
+                                    <span class="text-purple-300">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="70"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-palette text-purple-400"></i>
+                            <span>Frontend</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>React.js</span>
+                                    <span class="text-purple-300">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Next.js</span>
+                                    <span class="text-purple-300">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Tailwind CSS</span>
+                                    <span class="text-purple-300">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>HTML/CSS</span>
+                                    <span class="text-purple-300">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-server text-purple-400"></i>
+                            <span>Backend</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Node.js</span>
+                                    <span class="text-purple-300">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Express.js</span>
+                                    <span class="text-purple-300">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>MongoDB</span>
+                                    <span class="text-purple-300">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>SQL</span>
+                                    <span class="text-purple-300">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-tools text-purple-400"></i>
+                            <span>Tools & Platforms</span>
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 rounded-full glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105">Git</span>
+                            <span class="px-4 py-2 rounded-full glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105">GitHub</span>
+                            <span class="px-4 py-2 rounded-full glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105">Postman</span>
+                            <span class="px-4 py-2 rounded-full glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105">Docker</span>
+                            <span class="px-4 py-2 rounded-full glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105">TypeScript</span>
+                            <span class="px-4 py-2 rounded-full glass-card hover:bg-white/10 transition-all duration-300 hover:scale-105">CI/CD Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm bg-gradient-to-r from-purple-600/20 to-indigo-600/20 text-purple-300">AI/Computer Vision</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Driver Drowsiness Detection</h3>
+                        <p class="text-gray-300 mb-4">
+                            Real-time driver monitoring using Eye Aspect Ratio (EAR) with face & eye landmark detection and alerts for prolonged eye closure.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">Python</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">OpenCV</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">Dlib</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">ML</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/ayush-shivhare/Driver-Drowsiness-Detection"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-purple-300 hover:text-purple-200 flex items-center gap-2">
+  <i class="fab fa-github"></i>
+  <span>GitHub</span>
+</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm bg-gradient-to-r from-purple-600/20 to-indigo-600/20 text-purple-300">Web Development</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Video Meeting Application</h3>
+                        <p class="text-gray-300 mb-4">
+                            Real-time video calling system with user authentication, audio/video streaming, chat, and meeting creation/joining features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">WebRTC</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">Node.js</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">React</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">Socket.io</span>
+                        </div>
+                        <div class="flex gap-3">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm bg-gradient-to-r from-purple-600/20 to-indigo-600/20 text-purple-300">AI/Web</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">ThinkBot AI Assistant</h3>
+                        <p class="text-gray-300 mb-4">
+                            AI-powered conversational assistant with intelligent responses and productivity-focused features inspired by modern AI tools.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">AI/ML</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">Web Stack</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">API Integration</span>
+                        </div>
+                        <div class="flex gap-3">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm bg-gradient-to-r from-purple-600/20 to-indigo-600/20 text-purple-300">AI/NLP</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Smart Resume Screener</h3>
+                        <p class="text-gray-300 mb-4">
+                            Automated resume screening system with candidate shortlisting using smart filtering and natural language processing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">NLP</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">Python</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">ML</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/ayush-shivhare/smart-resume-screener"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-purple-300 hover:text-purple-200 flex items-center gap-2">
+  <i class="fab fa-github"></i>
+  <span>GitHub</span>
+</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="fade-in">
+                    <div class="glass-card p-6 rounded-2xl h-full hover:scale-105 transition-transform duration-300">
+                        <div class="mb-4">
+                            <span class="px-3 py-1 rounded-full text-sm bg-gradient-to-r from-purple-600/20 to-indigo-600/20 text-purple-300">Developer Tools/AI</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Mistral Code Explainer</h3>
+                        <p class="text-gray-300 mb-4">
+                            AI-powered tool that explains source code, helping developers understand logic, flow, and implementation details.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">AI</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">Code Analysis</span>
+                            <span class="text-sm code-font bg-gray-800 px-2 py-1 rounded">Web Interface</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/ayush-shivhare/mistral-code-explainer"
+   target="_blank"
+   class="text-purple-300 hover:text-purple-200 flex items-center gap-2">
+  <i class="fab fa-github"></i>
+  <span>GitHub</span>
+</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Timeline Section -->
+    <section id="experience" class="py-20 px-6 bg-gradient-to-b from-transparent to-black/20">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Experience & Timeline</h2>
+            
+            <!-- Virtual Experience -->
+            <div class="mb-16 fade-in">
+                <h3 class="text-2xl font-bold mb-8 gradient-text">Virtual Experience / Internships</h3>
+                <div class="space-y-6">
+<div class="glass-card experience-card p-6 rounded-2xl">
+  <div class="flex items-start gap-4">
+<div class="w-12 h-12 experience-icon rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+      <i class="fas fa-chart-line text-white"></i>
+    </div>
+    <div>
+      <h4 class="font-semibold text-lg">
+        Deloitte – Data Analytics Job Simulation (Jan 2026)
+      </h4>
+      <ul class="text-gray-300 mt-2 space-y-1">
+        <li>• Data cleaning and analysis</li>
+        <li>• Business insights generation</li>
+        <li>• Forensic and investigation-based analytics</li>
+      </ul>
+
+      <a href="https://drive.google.com/file/d/1BXWYxVHvQq-_AGHQaLdMKrku6Witq0Sl/view?usp=sharing"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 mt-4 text-purple-300 hover:text-purple-200 transition">
+        <i class="fas fa-external-link-alt"></i>
+        View Certificate
+      </a>
+    </div>
+  </div>
+</div>
+
+                    
+                    <div class="glass-card experience-card p-6 rounded-2xl">
+
+  <div class="flex items-start gap-4">
+<div class="w-12 h-12 experience-icon rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+      <i class="fas fa-laptop-code text-white"></i>
+    </div>
+    <div>
+      <h4 class="font-semibold text-lg">
+        Deloitte – Technology Job Simulation (Jan 2026)
+      </h4>
+      <ul class="text-gray-300 mt-2 space-y-1">
+        <li>• Solved real-world coding problems</li>
+        <li>• Debugging and optimization tasks</li>
+      </ul>
+
+      <a href="https://drive.google.com/file/d/1ap42IQlnAngpkDio8AF1WSjXl2odZB_w/view?usp=sharing"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 mt-4 text-purple-300 hover:text-purple-200 transition">
+        <i class="fas fa-external-link-alt"></i>
+        View Certificate
+      </a>
+    </div>
+  </div>
+</div>
+
+                    
+                    <div class="glass-card experience-card p-6 rounded-2xl">
+
+  <div class="flex items-start gap-4">
+<div class="w-12 h-12 experience-icon rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center flex-shrink-0 transition-transform duration-300">
+      <i class="fas fa-cogs text-white"></i>
+    </div>
+    <div>
+      <h4 class="font-semibold text-lg">
+        JPMorgan Chase & Co. – Software Engineer Job Simulation
+      </h4>
+      <ul class="text-gray-300 mt-2 space-y-1">
+        <li>• Project setup</li>
+        <li>• Kafka integration</li>
+        <li>• REST API development</li>
+        <li>• Backend services integration</li>
+      </ul>
+
+      <a href="https://drive.google.com/file/d/1tlc9IsT2yRfpCcfGwv-4uSNXipgTWWjP/view?usp=sharing"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 mt-4 text-purple-300 hover:text-purple-200 transition">
+        <i class="fas fa-external-link-alt"></i>
+        View Certificate
+      </a>
+    </div>
+  </div>
+</div>
+
+                </div>
+            </div>
+
+            <div class="fade-in">
+  <h3 class="text-2xl font-bold mb-8 gradient-text">Certifications</h3>
+
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- Oracle Data Platform -->
+    <div class="glass-card cert-card p-6 rounded-2xl">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 cert-icon rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center transition-transform duration-300">
+          <i class="fas fa-database text-white"></i>
+        </div>
+        <div>
+          <h4 class="font-semibold">
+            Oracle Data Platform 2025 – Certified Foundations Associate
+          </h4>
+
+          <a href="https://drive.google.com/file/d/1aaSbLtmBPw0v4QNcT-lkZcW_BOXZoLjP/view?usp=sharing"
+             target="_blank"
+             class="cert-link inline-flex items-center gap-2 mt-2 text-purple-300 hover:text-purple-200 transition">
+            <i class="fas fa-external-link-alt"></i>
+            View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Oracle Analytics Cloud -->
+    <div class="glass-card cert-card p-6 rounded-2xl">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 cert-icon rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center transition-transform duration-300">
+          <i class="fas fa-chart-bar text-white"></i>
+        </div>
+        <div>
+          <h4 class="font-semibold">
+            Oracle Analytics Cloud 2025 – Certified Professional
+          </h4>
+
+          <a href="https://drive.google.com/file/d/150c7_xaCp2GgI2j3QkSex6L_N63eEsvo/view?usp=sharing"
+             target="_blank"
+             class="cert-link inline-flex items-center gap-2 mt-2 text-purple-300 hover:text-purple-200 transition">
+            <i class="fas fa-external-link-alt"></i>
+            View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AWS Cloud Practitioner -->
+    <div class="glass-card cert-card p-6 rounded-2xl">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 cert-icon rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center transition-transform duration-300">
+          <i class="fab fa-aws text-white"></i>
+        </div>
+        <div>
+          <h4 class="font-semibold">
+            AWS Certified Cloud Practitioner (2025)
+          </h4>
+
+          <a href="https://drive.google.com/file/d/1b19aLibpTUi3KfX5TihD0MH0oztvZGUC/view?usp=drive_link"
+             target="_blank"
+             class="cert-link inline-flex items-center gap-2 mt-2 text-purple-300 hover:text-purple-200 transition">
+            <i class="fas fa-external-link-alt"></i>
+            View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- IBM Gen AI -->
+    <div class="glass-card cert-card p-6 rounded-2xl">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 cert-icon rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center transition-transform duration-300">
+          <i class="fas fa-robot text-white"></i>
+        </div>
+        <div>
+          <h4 class="font-semibold">
+            GEN AI Using IBM Watsonx – IBM Career Education Program
+          </h4>
+
+          <a href="https://drive.google.com/file/d/1_G6BfGvcHX1sYXjadOzDT-v3p9Pw-tee/view?usp=sharing"
+             target="_blank"
+             class="cert-link inline-flex items-center gap-2 mt-2 text-purple-300 hover:text-purple-200 transition">
+            <i class="fas fa-external-link-alt"></i>
+            View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold mb-12 text-center fade-in">Get In Touch</h2>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info & Map -->
+                <div class="fade-in">
+                    <div class="glass-card p-8 rounded-2xl h-full">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Contact Information</h3>
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600/20 to-indigo-600/20 flex items-center justify-center">
+                                    <i class="fas fa-envelope text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <a href="mailto:ayushshivhare649@gmail.com" class="text-gray-300 hover:text-purple-300">ayushshivhare649@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600/20 to-indigo-600/20 flex items-center justify-center">
+                                    <i class="fas fa-phone text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <a href="tel:+919660434497" class="text-gray-300 hover:text-purple-300">+91-9660434497</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600/20 to-indigo-600/20 flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Address</h4>
+                                    <p class="text-gray-300">Rajendra Nagar, Kabrai<br>Mahoba, Uttar Pradesh – 210424<br>India</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Embedded Map -->
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-lg mb-4">Location Map</h4>
+                            <div class="glass-card p-4 rounded-xl">
+                                <div id="map" class="w-full h-64 rounded-lg overflow-hidden">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.123456789012!2d79.873046!3d25.894268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a6b4e1b2b3c4d5e%3A0x7b8f1e2f3g4h5i6!2sRajendra%20Nagar%2C%20Kabrai%2C%20Mahoba%2C%20Uttar%20Pradesh%20210424!5e0!3m2!1sen!2sin!4v1612345678901!5m2!1sen!2sin" 
+                                        width="100%" 
+                                        height="100%" 
+                                        style="border:0;" 
+                                        allowfullscreen="" 
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                        title="Ayush Shivhare's Location in Mahoba, Uttar Pradesh"
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Send Message</h3>
+                       <form action="https://api.web3forms.com/submit"
+      method="POST"
+      class="space-y-6">
+
+  <!-- REQUIRED -->
+  <input type="hidden" name="access_key" value="64c10d10-dbdc-417a-bd83-b51f447b3ef8">
+
+  <!-- Optional but recommended -->
+  <input type="hidden" name="from_name" value="Ayush Shivhare Portfolio">
+  <input type="hidden" name="subject" value="New Contact Message from Portfolio">
+
+  <div>
+    <label class="block text-sm font-medium mb-2">Name</label>
+    <input type="text" name="name" required
+           class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-purple-500 focus:outline-none transition-colors">
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-2">Email</label>
+    <input type="email" name="email" required
+           class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-purple-500 focus:outline-none transition-colors">
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-2">Subject</label>
+    <input type="text" name="user_subject" required
+           class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-purple-500 focus:outline-none transition-colors">
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-2">Message</label>
+    <textarea name="message" rows="4" required
+              class="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 focus:border-purple-500 focus:outline-none transition-colors"></textarea>
+  </div>
+
+  <button type="submit"
+          class="w-full px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 hover:scale-105">
+    Send Message
+  </button>
+
+</form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">Ayush Shivhare</h3>
+                    <p class="text-gray-400">Computer Science Engineer | Software & Web Developer | AI & Data Enthusiast</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://www.linkedin.com/in/ayush-shivhare-427578275/" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/ayush-shivhare" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/cypher_207/" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/ayush.shivhare.7982" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>&copy; 2026 Ayush Shivhare. All rights reserved.</p>
+                <p class="mt-2 text-sm">Designed with ❤️ using modern web technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Define all data
+        const sections = [
+            { "id": "about", "name": "About" },
+            { "id": "skills", "name": "Skills" },
+            { "id": "projects", "name": "Projects" },
+            { "id": "experience", "name": "Experience" },
+            { "id": "contact", "name": "Contact" }
+        ];
+
+        const projects = [
+            {
+                "id": 1,
+                "title": "Driver Drowsiness Detection System",
+                "category": "AI/Computer Vision",
+                "description": "Real-time driver monitoring using Eye Aspect Ratio (EAR) with face & eye landmark detection and alerts for prolonged eye closure.",
+                "tech": ["Python", "OpenCV", "Dlib", "Machine Learning"],
+                "github": "#"
+            },
+            {
+                "id": 2,
+                "title": "Video Meeting Application",
+                "category": "Web Development",
+                "description": "Real-time video calling system with user authentication, audio/video streaming, chat, and meeting creation/joining features.",
+                "tech": ["WebRTC", "Node.js", "React", "Socket.io"],
+                "github": null
+            },
+            {
+                "id": 3,
+                "title": "ThinkBot AI Assistant",
+                "category": "AI/Web",
+                "description": "AI-powered conversational assistant with intelligent responses and productivity-focused features inspired by modern AI tools.",
+                "tech": ["AI/ML", "Web Stack", "API Integration"],
+                "github": null
+            },
+            {
+                "id": 4,
+                "title": "Smart Resume Screener",
+                "category": "AI/NLP",
+                "description": "Automated resume screening system with candidate shortlisting using smart filtering and natural language processing.",
+                "tech": ["NLP", "Python", "ML"],
+                "github": "#"
+            },
+            {
+                "id": 5,
+                "title": "Mistral Code Explainer",
+                "category": "Developer Tools/AI",
+                "description": "AI-powered tool that explains source code, helping developers understand logic, flow, and implementation details.",
+                "tech": ["AI", "Code Analysis", "Web Interface"],
+                "github": "#"
+            }
+        ];
+
+        // Initialize animations
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+            
+            mobileMenuBtn.addEventListener("click", function() {
+                mobileMenu.classList.toggle("hidden");
+                this.innerHTML = mobileMenu.classList.contains("hidden")
+                ? '<i class="fas fa-bars"></i>'
+                : '<i class="fas fa-times"></i>';
+
+            });
+
+            
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    if (targetId === "#") return;
+
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: "smooth"
+      });
+      mobileMenu.classList.add("hidden");
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  });
+});
+
+            
+
+
+
+            // Scroll-based animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        
+                        // Animate skill bars
+                        if (entry.target.id === "skills") {
+                            setTimeout(() => {
+                                document.querySelectorAll(".skill-level").forEach(bar => {
+                                    const level = bar.getAttribute("data-level");
+                                    bar.style.width = level + "%";
+                                });
+                            }, 300);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in elements
+            document.querySelectorAll(".fade-in").forEach(el => {
+                observer.observe(el);
+            });
+
+            // Animate skill bars on load if skills section is visible
+            const skillsSection = document.getElementById("skills");
+            if (skillsSection.getBoundingClientRect().top < window.innerHeight) {
+                setTimeout(() => {
+                    document.querySelectorAll(".skill-level").forEach(bar => {
+                        const level = bar.getAttribute("data-level");
+                        bar.style.width = level + "%";
+                    });
+                }, 500);
+            }
+        });
+
+        // Add scroll effect to header
+        let lastScrollTop = 0;
+        const header = document.querySelector("header");
+        
+        window.addEventListener("scroll", function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = "translateY(-100%)";
+            } else {
+                header.style.transform = "translateY(0)";
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        // Rotating intro text (typewriter)
+const roles = [
+  "scalable web apps",
+  "modern UI experiences",
+  "backend APIs",
+  "AI-driven projects"
+];
+
+const el = document.getElementById("rotatingText");
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function tick() {
+  const current = roles[roleIndex];
+
+  if (!deleting) {
+    charIndex++;
+    el.textContent = current.substring(0, charIndex);
+    if (charIndex === current.length) {
+      deleting = true;
+      setTimeout(tick, 1200);
+      return;
+    }
+  } else {
+    charIndex--;
+    el.textContent = current.substring(0, charIndex);
+    if (charIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+
+  setTimeout(tick, deleting ? 40 : 60);
+}
+tick();
+
+
+        // Deployment instructions
+        console.log(`
+        ================================
+        DEPLOYMENT INSTRUCTIONS
+        ================================
+        
+        GitHub Pages:
+        1. Create a new repository on GitHub
+        2. Upload all files (index.html, any assets)
+        3. Go to Settings > Pages
+        4. Set source to main branch
+        5. Your site will be available at: https://username.github.io/repository-name
+        
+        Netlify:
+        1. Drag and drop your project folder to Netlify"s drop zone
+        2. Or connect your GitHub repository
+        3. Netlify will automatically deploy
+        4. Your site will be available at: https://project-name.netlify.app
+        
+        Vercel:
+        1. Install Vercel CLI: npm i -g vercel
+        2. Run: vercel
+        3. Follow the prompts
+        4. Your site will be available at: https://project-name.vercel.app
+        
+        For optimal performance:
+        1. Compress images before deployment
+        2. Enable Gzip compression
+        3. Set up proper caching headers
+        4. Consider using a CDN for assets
+        `);
+    </script>
+</body>
+</html>
